@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story | Candelas</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: "#EF4444", background: "#0A0A0A" },
+                    fontFamily: { display: ["Syne", "sans-serif"], sans: ["Inter", "sans-serif"] }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-white font-sans overflow-x-hidden">
+    <nav class="fixed top-0 w-full z-[100] bg-black/80 backdrop-blur-md py-4 border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <img alt="Candelas Logo" class="h-12 w-12 object-contain" src="https://iamcandelas.com/candelas-logo.png" />
+                <span class="font-display text-lg tracking-tighter uppercase antialiased">iamcandelas</span>
+            </a>
+            <div class="flex gap-8 items-center">
+                <a href="index.html" class="text-[10px] font-bold tracking-[0.3em] uppercase hover:text-primary transition-colors">Home</a>
+                <a href="links.html" class="text-[10px] font-bold tracking-[0.3em] uppercase hover:text-primary transition-colors">Links</a>
+            </div>
+        </div>
+    </nav>
+
+    <article class="pt-32 pb-32 max-w-4xl mx-auto px-6">
+        <header class="mb-20">
+            <span class="text-primary font-bold tracking-[0.3em] uppercase mb-4 block">Biography</span>
+            <h1 class="font-display text-5xl md:text-8xl uppercase tracking-tighter leading-none mb-12">
+                The <br/>Artist <span class="text-primary">Journey</span>
+            </h1>
+            <div class="aspect-[16/9] w-full rounded-2xl overflow-hidden mb-12 border border-white/10 shadow-2xl">
+                <img src="https://iamcandelas.com/candelas-photo.jpg" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" alt="Candelas Profile" />
+            </div>
+        </header>
+
+        <div class="space-y-8 text-xl text-slate-300 leading-relaxed font-light">
+            <p>Candelas is a Mexican-American artist, singer, songwriter, and multi-instrumentalist based in Las Vegas, Nevada. Blending alternative rock, indie, and pop influences, his music captures raw emotion through vivid storytelling and a deep connection to identity and place.</p>
+            <p>American born and raised between cultures, he began writing songs in 2004, developing a passion for crafting music that feels both personal and universal. A self-taught instrumentalist with classical vocal training, he embodies the independent spirit, writing, recording, mixing, and producing his own music from start to finish. His DIY approach gives each track an honest, handmade quality that reflects his commitment to authenticity.</p>
+            <p>Before launching his solo work, Candelas fronted the rock band Blood Roosters in Aguascalientes, MX earning local recognition for their high-energy performances and original sound. After relocating to Las Vegas, he founded SECOS, an alternative rock group that performed at major events such as Life Is Beautiful Festival, Jam in the Van, and opened for national touring acts including Dogstar at the Brooklyn Bowl.</p>
+            <p>Beyond his own music, Candelas is the founder of Pineapple Fest, a Las Vegas-based event celebrating live bands, community, and the spirit of independent music. His dedication to the local scene and hands-on creative process reflect a deep love for collaboration and artistic growth.</p>
+            <p>Today, Candelas's solo work continues to evolve, rooted in introspection, cultural pride, and the energy of live performance. Joined by a talented live band, he brings his songs to life on stage with a blend of power, emotion, and connection that resonates wherever he performs.</p>
+            <p>From Aguascalientes to Las Vegas, Candelas represents the voice of a new generation of independent artists, bridging cultures and sounds through passion, perseverance, and the universal language of rock.</p>
+        </div>
+
+        <div class="mt-20 pt-20 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-center md:text-left">
+                <h3 class="font-display text-2xl uppercase mb-2">Socially Rooted</h3>
+                <p class="text-slate-500 uppercase tracking-widest text-xs">Aguascalientes &bull; Las Vegas</p>
+            </div>
+            <a href="index.html#newsletter" class="bg-primary px-8 py-3 rounded-full text-white font-bold uppercase text-sm tracking-widest">Connect</a>
+        </div>
+    </article>
+
+    <footer class="py-12 bg-black border-t border-white/5 text-center text-slate-500 text-xs tracking-widest uppercase">
+        <p>&copy; 2025 Candelas Music</p>
+    </footer>
+</body>
+</html>
