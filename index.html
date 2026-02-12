@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candelas | Official Artist Site</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#EF4444",
+                        secondary: "#111111",
+                        background: "#0A0A0A",
+                    },
+                    fontFamily: {
+                        display: ["Syne", "sans-serif"],
+                        sans: ["Inter", "sans-serif"],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .hero-gradient {
+                background: linear-gradient(to top, #0A0A0A 0%, transparent 100%);
+            }
+            .nav-blur {
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+            }
+            .text-glow {
+                text-shadow: 0 0 20px rgba(239, 68, 68, 0.4);
+            }
+            .fluid-title {
+                font-size: clamp(3rem, 15vw, 14rem);
+                line-height: 0.8;
+            }
+            .scrollbar-hide::-webkit-scrollbar {
+                display: none;
+            }
+            .scrollbar-hide {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+            /* High-fidelity logo rendering */
+            .logo-sharp {
+                image-rendering: -webkit-optimize-contrast;
+                image-rendering: auto;
+                transform: translateZ(0); /* Force GPU acceleration */
+                backface-visibility: hidden;
+            }
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.12.0"
+  }
+}
+</script>
+</head>
+<body class="bg-background text-white font-sans overflow-x-hidden">
+    <div id="root"></div>
+</body>
+</html>
