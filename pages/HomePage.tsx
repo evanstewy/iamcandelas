@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   YOUTUBE_VIDEO_ID, 
@@ -9,15 +9,54 @@ import {
   VHS_YOUTUBE_URL,
   TOUR_DATES, 
   BIO_SUMMARY,
-  INSTAGRAM_HANDLE
+  INSTAGRAM_HANDLE,
+  SENDER_API_TOKEN,
+  SENDER_SUBSCRIBERS_ENDPOINT
 } from '../constants';
 import InstagramEmbed from '../components/InstagramEmbed';
 
 const HomePage: React.FC = () => {
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('loading');
+    setErrorMessage('');
+
+    try {
+      const response = await fetch(SENDER_SUBSCRIBERS_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'Authorization': `Bearer ${SENDER_API_TOKEN}`
+        },
+        body: JSON.stringify({
+          email: email,
+          // You can add more fields here if needed, like groups: [ID]
+        })
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setEmail('');
+      } else {
+        const errorData = await response.json();
+        throw new Error(errorData?.message || 'Failed to subscribe. Please try again later.');
+      }
+    } catch (err: any) {
+      console.error('Subscription error:', err);
+      setStatus('error');
+      setErrorMessage(err.message || 'Something went wrong. Please try again.');
     }
   };
 
@@ -286,15 +325,47 @@ const HomePage: React.FC = () => {
         <div className="max-w-4xl mx-auto px-6 text-center text-white">
           <h2 className="font-display text-4xl md:text-7xl mb-6 uppercase tracking-tighter">Join the Collective</h2>
           <p className="text-base md:text-lg mb-10 md:mb-12 opacity-90 max-w-lg mx-auto font-medium">Get early access to tour dates, exclusive merch, and unreleased demos.</p>
-          <form className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
-            <input 
-              className="flex-grow bg-white/20 border border-white/30 focus:ring-2 focus:ring-white placeholder:text-white/60 py-4 px-8 rounded-full text-white backdrop-blur-sm outline-none" 
-              placeholder="Your email address" 
-              required 
-              type="email" 
-            />
-            <button className="bg-white text-primary font-bold uppercase py-4 px-10 rounded-full hover:bg-black hover:text-white transition-all shadow-xl text-sm" type="submit">Subscribe</button>
-          </form>
+          
+          {status === 'success' ? (
+            <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 md:p-12 animate-in zoom-in duration-500">
+              <span className="material-symbols-outlined text-6xl mb-4 text-white">mark_email_read</span>
+              <h3 className="font-display text-3xl uppercase mb-2">Welcome to the Collective</h3>
+              <p className="opacity-80">You've successfully subscribed. Keep an eye on your inbox.</p>
+              <button 
+                onClick={() => setStatus('idle')}
+                className="mt-6 text-sm font-bold uppercase tracking-widest border-b border-white/40 pb-1 hover:border-white transition-all"
+              >
+                Back to Sign Up
+              </button>
+            </div>
+          ) : (
+            <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto relative">
+              <input 
+                className={`flex-grow bg-white/20 border ${status === 'error' ? 'border-red-300' : 'border-white/30'} focus:ring-2 focus:ring-white placeholder:text-white/60 py-4 px-8 rounded-full text-white backdrop-blur-sm outline-none transition-all`} 
+                placeholder="Your email address" 
+                required 
+                type="email" 
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                disabled={status === 'loading'}
+              />
+              <button 
+                className="bg-white text-primary font-bold uppercase py-4 px-10 rounded-full hover:bg-black hover:text-white transition-all shadow-xl text-sm flex items-center justify-center min-w-[160px] disabled:opacity-50 disabled:cursor-not-allowed" 
+                type="submit"
+                disabled={status === 'loading'}
+              >
+                {status === 'loading' ? (
+                  <span className="w-5 h-5 border-2 border-primary border-t-transparent rounded-full animate-spin"></span>
+                ) : 'Subscribe'}
+              </button>
+              
+              {status === 'error' && (
+                <div className="absolute -bottom-10 left-0 right-0 text-white text-xs font-bold animate-in fade-in slide-in-from-top-2">
+                   {errorMessage}
+                </div>
+              )}
+            </form>
+          )}
         </div>
       </section>
     </div>
