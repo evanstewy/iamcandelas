@@ -34,26 +34,7 @@ export async function onRequestPost(context) {
     });
   }
 
-  // Step 1: Create the subscriber
-  const subscriberRes = await fetch('https://api.sender.net/v2/subscribers', {
-    method: 'POST',
-    headers: {
-      'Authorization': `Bearer ${token}`,
-      'Content-Type': 'application/json',
-      'Accept': 'application/json',
-    },
-    body: JSON.stringify({ email }),
-  });
-
-  if (!subscriberRes.ok) {
-    const data = await subscriberRes.json();
-    return new Response(JSON.stringify({ message: data.message || 'Subscription failed.' }), {
-      status: 400, headers: CORS_HEADERS,
-    });
-  }
-
-  // Step 2: Add subscriber to "New Subscribers" group
-  await fetch('https://api.sender.net/v2/subscribers/groups/bYYJjO', {
+  const res = await fetch('https://api.sender.net/v2/subscribers/groups/bYYJjO', {
     method: 'POST',
     headers: {
       'Authorization': `Bearer ${token}`,
@@ -63,7 +44,8 @@ export async function onRequestPost(context) {
     body: JSON.stringify({ subscribers: [email] }),
   });
 
-  return new Response(JSON.stringify({ success: true }), {
-    status: 200, headers: CORS_HEADERS,
-  });
+  const data = await res.json();
+  return res.ok
+    ? new Response(JSON.stringify({ success: true }), { status: 200, headers: CORS_HEADERS })
+    : new Response(JSON.stringify({ message: data.message || 'Subscription failed.' }), { status: 400, headers: CORS_HEADERS });
 }
