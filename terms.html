@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Use | Candelas</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+  <!-- Local purged Tailwind CSS (29KB vs 143KB CDN) -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Non-blocking Google Fonts load -->
+  <!-- Preconnect to speed up font negotiation -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Load fonts async using media trick - switches to 'all' once loaded -->
+  <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@700;800&display=swap">
+  <!-- Fallback for no-JS: standard blocking load -->
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@700;800&display=swap"></noscript>
+  <!-- Material Symbols - deferred to avoid render blocking -->
+  <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"></noscript>
+</head>
+<body class="bg-[#0A0A0A] text-white font-sans overflow-x-hidden">
+
+  <nav class="fixed top-0 w-full z-[100] bg-black py-4 border-b border-white/10 shadow-xl">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 group relative z-[102]">
+        <img alt="Candelas Logo" class="h-14 w-14 object-contain logo-sharp" src="candelas-logo.png">
+        <span class="font-display text-lg tracking-tighter uppercase hidden sm:block">iamcandelas</span>
+      </a>
+      <div class="hidden md:flex items-center gap-10">
+        <a href="index.html#music" class="text-[10px] font-bold tracking-[0.3em] uppercase hover:text-primary transition-colors">Music</a>
+        <a href="story.html" class="text-[10px] font-bold tracking-[0.3em] uppercase hover:text-primary transition-colors">Story</a>
+        <a href="contact.html" class="text-[10px] font-bold tracking-[0.3em] uppercase hover:text-primary transition-colors">Contact</a>
+        <a href="index.html#newsletter" class="bg-primary px-6 py-2 rounded-full text-white text-[10px] font-bold tracking-widest uppercase hover:scale-105 transition-transform">Join</a>
+      </div>
+      <button onclick="toggleMenu()" class="md:hidden text-white relative z-[102] p-2">
+        <span id="menu-icon" class="material-symbols-outlined text-3xl">menu</span>
+      </button>
+    </div>
+    <div id="mobile-menu" class="fixed inset-0 bg-black hidden-menu md:hidden z-[101] flex flex-col items-center justify-center">
+      <div class="flex flex-col items-center gap-10">
+        <a href="index.html" class="text-4xl font-display font-bold uppercase hover:text-primary">Home</a>
+        <a href="story.html" class="text-4xl font-display font-bold uppercase hover:text-primary">Story</a>
+        <a href="contact.html" class="text-4xl font-display font-bold uppercase hover:text-primary">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="pt-32 pb-32 bg-[#0A0A0A] min-h-screen">
+    <div class="max-w-4xl mx-auto px-6">
+      <header class="mb-16">
+        <span class="text-primary font-bold tracking-[0.3em] uppercase mb-4 block">Legal</span>
+        <h1 class="font-display text-5xl md:text-7xl uppercase tracking-tighter leading-none mb-8">
+          Terms of <span class="text-primary">Use</span>
+        </h1>
+        <p class="text-slate-500 text-sm uppercase tracking-widest">Last Updated: February 24, 2026</p>
+      </header>
+
+      <div class="space-y-12 text-slate-300 leading-relaxed">
+        <section>
+          <h2 class="text-2xl font-display uppercase text-white mb-4">1. Acceptance of Terms</h2>
+          <p>By accessing and using this website, you agree to be bound by these Terms of Use. If you do not agree to these terms, please do not use the website.</p>
+        </section>
+        <section>
+          <h2 class="text-2xl font-display uppercase text-white mb-4">2. Intellectual Property</h2>
+          <p>All content on this website, including music, videos, images, text, and logos, is the property of Candelas Music or its content suppliers and is protected by copyright and other intellectual property laws. You may not use, reproduce, or distribute any content without our express written permission.</p>
+        </section>
+        <section>
+          <h2 class="text-2xl font-display uppercase text-white mb-4">3. User Conduct</h2>
+          <p>You agree to use the website only for lawful purposes. You are prohibited from using the website to transmit any unlawful, harmful, or offensive material, or to interfere with the operation of the website.</p>
+        </section>
+        <section>
+          <h2 class="text-2xl font-display uppercase text-white mb-4">4. Newsletter and Contact Form</h2>
+          <p>By signing up for our newsletter, you agree to receive periodic updates from us. When using our contact form, you agree to provide accurate information and not to use the form for spam or unsolicited commercial messages.</p>
+        </section>
+        <section>
+          <h2 class="text-2xl font-display uppercase text-white mb-4">5. Limitation of Liability</h2>
+          <p>This website is provided "as is" without any warranties. Candelas Music will not be liable for any damages arising from the use of this website.</p>
+        </section>
+        <section>
+          <h2 class="text-2xl font-display uppercase text-white mb-4">6. Governing Law</h2>
+          <p>These Terms of Use are governed by the laws of the State of Nevada, without regard to its conflict of law principles.</p>
+        </section>
+        <section>
+          <h2 class="text-2xl font-display uppercase text-white mb-4">7. Contact Information</h2>
+          <p>If you have any questions about these Terms of Use, please <a href="contact.html" class="text-primary hover:underline">contact us here</a>.</p>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <footer class="py-20 border-t border-white/5 bg-black">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col items-center">
+      <img alt="Candelas Logo" class="h-24 w-24 object-contain mb-8 opacity-80 logo-sharp" src="candelas-logo.png">
+      <div class="text-center">
+        <p class="text-slate-600 text-sm mb-4">© <span id="year"></span> CANDELAS MUSIC. ALL RIGHTS RESERVED.</p>
+        <div class="flex gap-6 justify-center text-xs text-slate-700 uppercase font-bold tracking-widest flex-wrap">
+          <a href="newsletter.html" class="hover:text-slate-300">Newsletter</a>
+          <a href="privacy.html" class="hover:text-slate-300">Privacy Policy</a>
+          <a href="terms.html" class="hover:text-slate-300">Terms of Use</a>
+          <a href="contact.html" class="hover:text-slate-300">Contact Candelas</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    let menuOpen = false;
+    function toggleMenu() {
+      menuOpen = !menuOpen;
+      const menu = document.getElementById('mobile-menu');
+      const icon = document.getElementById('menu-icon');
+      if (menuOpen) { menu.classList.remove('hidden-menu'); menu.classList.add('visible-menu'); icon.textContent = 'close'; }
+      else { menu.classList.remove('visible-menu'); menu.classList.add('hidden-menu'); icon.textContent = 'menu'; }
+    }
+  </script>
+  <script src="site.js"></script>
+</body>
+</html>

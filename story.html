@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Story | Candelas – Biography</title>
+  <meta name="description" content="The biography of Candelas, Mexican-American alternative rock artist from Las Vegas, Nevada.">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+  <!-- Local purged Tailwind CSS (29KB vs 143KB CDN) -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Non-blocking Google Fonts load -->
+  <!-- Preconnect to speed up font negotiation -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Load fonts async using media trick - switches to 'all' once loaded -->
+  <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@700;800&display=swap">
+  <!-- Fallback for no-JS: standard blocking load -->
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@700;800&display=swap"></noscript>
+  <!-- Material Symbols - deferred to avoid render blocking -->
+  <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"></noscript>
+</head>
+<body class="bg-[#0A0A0A] text-white font-sans overflow-x-hidden">
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="fixed top-0 w-full z-[100] transition-all duration-500 bg-black py-4 border-b border-white/10 shadow-xl">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 group relative z-[102]">
+        <img alt="Candelas Logo" class="h-14 w-14 object-contain logo-sharp group-hover:rotate-12 transition-transform duration-500" src="candelas-logo.png">
+        <span class="font-display text-lg tracking-tighter uppercase hidden sm:block">iamcandelas</span>
+      </a>
+      <div class="hidden md:flex items-center gap-10">
+        <a href="index.html#music" class="text-[10px] font-bold tracking-[0.3em] uppercase hover:text-primary transition-colors">Music</a>
+        <a href="index.html#video" class="text-[10px] font-bold tracking-[0.3em] uppercase hover:text-primary transition-colors">Video</a>
+        <a href="story.html" class="text-[10px] font-bold tracking-[0.3em] uppercase text-primary">Story</a>
+        <a href="index.html#live" class="text-[10px] font-bold tracking-[0.3em] uppercase hover:text-primary transition-colors">Live</a>
+        <a href="index.html#newsletter" class="bg-primary px-6 py-2 rounded-full text-white text-[10px] font-bold tracking-widest uppercase hover:scale-105 transition-transform">Join</a>
+      </div>
+      <button id="menu-toggle" onclick="toggleMenu()" class="md:hidden text-white relative z-[102] p-2" aria-label="Toggle Menu">
+        <span id="menu-icon" class="material-symbols-outlined text-3xl">menu</span>
+      </button>
+    </div>
+    <div id="mobile-menu" class="fixed inset-0 bg-black hidden-menu md:hidden z-[101] flex flex-col items-center justify-center">
+      <div class="flex flex-col items-center gap-10">
+        <a href="index.html#music" class="text-4xl font-display font-bold tracking-[0.1em] uppercase hover:text-primary">Music</a>
+        <a href="index.html#video" class="text-4xl font-display font-bold tracking-[0.1em] uppercase hover:text-primary">Video</a>
+        <a href="story.html" class="text-4xl font-display font-bold tracking-[0.1em] uppercase text-primary">Story</a>
+        <a href="index.html#live" class="text-4xl font-display font-bold tracking-[0.1em] uppercase hover:text-primary">Live</a>
+        <a href="index.html#newsletter" class="mt-6 bg-primary px-12 py-5 rounded-full text-white text-sm font-bold tracking-[0.2em] uppercase">Join the Collective</a>
+      </div>
+      <div class="absolute bottom-16 flex gap-10 opacity-60">
+        <a href="https://www.instagram.com/iamcandelas/" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined text-white text-2xl">photo_camera</span></a>
+        <a href="https://www.youtube.com/@iamcandelas" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined text-white text-2xl">smart_display</span></a>
+        <a href="https://open.spotify.com/artist/58hnBPQ7LBa6AyJLHRK30o" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined text-white text-2xl">podcasts</span></a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTENT -->
+  <div class="pt-32 pb-32 bg-[#0A0A0A] min-h-screen">
+    <div class="max-w-4xl mx-auto px-6">
+      <header class="mb-20 animate-fade-up">
+        <span class="text-primary font-bold tracking-[0.3em] uppercase mb-4 block">Biography</span>
+        <h1 class="font-display text-5xl md:text-8xl uppercase tracking-tighter leading-none mb-12">
+          The <br>Artist <span class="text-primary">Journey</span>
+        </h1>
+        <div class="aspect-[16/9] w-full rounded-2xl overflow-hidden mb-12 border border-white/10 shadow-2xl">
+          <img src="candelas-photo.jpg" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" alt="Candelas - Artist Biography Portrait">
+        </div>
+      </header>
+
+      <div class="space-y-8">
+        <p class="text-xl text-slate-300 leading-relaxed font-light">
+          Candelas is a Mexican-American artist, singer, songwriter, and multi-instrumentalist based in Las Vegas, Nevada. Blending alternative rock, indie, and pop influences, his music captures raw emotion through vivid storytelling and a deep connection to identity and place.
+        </p>
+        <p class="text-xl text-slate-300 leading-relaxed font-light">
+          American born and raised between cultures, he began writing songs in 2004, developing a passion for crafting music that feels both personal and universal. A self-taught instrumentalist with classical vocal training, he embodies the independent spirit, writing, recording, mixing, and producing his own music from start to finish. His DIY approach gives each track an honest, handmade quality that reflects his commitment to authenticity.
+        </p>
+        <p class="text-xl text-slate-300 leading-relaxed font-light">
+          Before launching his solo work, Candelas fronted the rock band Blood Roosters in Aguascalientes, MX earning local recognition for their high-energy performances and original sound. After relocating to Las Vegas, he founded SECOS, an alternative rock group that performed at major events such as Life Is Beautiful Festival, Jam in the Van, and opened for national touring acts including Dogstar at the Brooklyn Bowl.
+        </p>
+        <p class="text-xl text-slate-300 leading-relaxed font-light">
+          Beyond his own music, Candelas is the founder of Pineapple Fest, a Las Vegas-based event celebrating live bands, community, and the spirit of independent music. His dedication to the local scene and hands-on creative process reflect a deep love for collaboration and artistic growth.
+        </p>
+        <p class="text-xl text-slate-300 leading-relaxed font-light">
+          Today, Candelas's solo work continues to evolve, rooted in introspection, cultural pride, and the energy of live performance. Joined by a talented live band, he brings his songs to life on stage with a blend of power, emotion, and connection that resonates wherever he performs.
+        </p>
+        <p class="text-xl text-slate-300 leading-relaxed font-light">
+          From Aguascalientes to Las Vegas, Candelas represents the voice of a new generation of independent artists, bridging cultures and sounds through passion, perseverance, and the universal language of rock.
+        </p>
+      </div>
+
+      <div class="mt-20 pt-20 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="text-center md:text-left">
+          <h3 class="font-display text-2xl uppercase mb-2">Socially Rooted</h3>
+          <p class="text-slate-500 uppercase tracking-widest text-xs">Aguascalientes &bull; Las Vegas</p>
+        </div>
+        <div>
+          <a href="contact.html" class="bg-primary px-8 py-3 rounded-full text-white font-bold uppercase text-sm tracking-widest hover:scale-105 transition-transform inline-block">Connect with Candelas</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="py-20 border-t border-white/5 bg-black">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col items-center">
+      <img alt="Candelas Logo" class="h-24 w-24 object-contain mb-8 opacity-80 logo-sharp" src="candelas-logo.png">
+      <div class="flex flex-wrap justify-center gap-12 mb-12 text-sm font-bold tracking-widest uppercase text-slate-500">
+        <a href="https://open.spotify.com/artist/58hnBPQ7LBa6AyJLHRK30o" class="hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">Spotify</a>
+        <a href="https://music.apple.com/us/artist/candelas/1870165233" class="hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">Apple Music</a>
+        <a href="https://www.youtube.com/@iamcandelas" class="hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="https://www.instagram.com/iamcandelas/" class="hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </div>
+      <div class="text-center">
+        <p class="text-slate-600 text-sm mb-4">© <span id="year"></span> CANDELAS MUSIC. ALL RIGHTS RESERVED.</p>
+        <div class="flex gap-6 justify-center text-xs text-slate-700 uppercase font-bold tracking-widest flex-wrap">
+          <a href="newsletter.html" class="hover:text-slate-300">Newsletter</a>
+          <a href="privacy.html" class="hover:text-slate-300">Privacy Policy</a>
+          <a href="terms.html" class="hover:text-slate-300">Terms of Use</a>
+          <a href="contact.html" class="hover:text-slate-300">Contact Candelas</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    let menuOpen = false;
+    function toggleMenu() {
+      menuOpen = !menuOpen;
+      const menu = document.getElementById('mobile-menu');
+      const icon = document.getElementById('menu-icon');
+      if (menuOpen) { menu.classList.remove('hidden-menu'); menu.classList.add('visible-menu'); icon.textContent = 'close'; }
+      else { menu.classList.remove('visible-menu'); menu.classList.add('hidden-menu'); icon.textContent = 'menu'; }
+    }
+  </script>
+  <script src="site.js"></script>
+</body>
+</html>

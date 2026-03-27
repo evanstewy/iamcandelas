@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Links | Candelas</title>
+  <meta name="description" content="All Candelas links - music, social, website and more.">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+  <!-- Local purged Tailwind CSS (29KB vs 143KB CDN) -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Non-blocking Google Fonts load -->
+  <!-- Preconnect to speed up font negotiation -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Load fonts async using media trick - switches to 'all' once loaded -->
+  <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@700;800&display=swap">
+  <!-- Fallback for no-JS: standard blocking load -->
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@700;800&display=swap"></noscript>
+  <!-- Material Symbols - deferred to avoid render blocking -->
+  <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"></noscript>
+</head>
+<body class="bg-[#050505] text-white font-sans min-h-screen">
+
+  <!-- Background glow -->
+  <div class="fixed inset-0 pointer-events-none z-0">
+    <div class="absolute top-0 left-1/2 w-[150%] aspect-square bg-red-500/20 blur-[120px] rounded-full opacity-30" style="transform:translate(-50%,-30%)"></div>
+    <div class="absolute inset-0 bg-black/40"></div>
+  </div>
+
+  <div class="relative z-10 flex flex-col items-center px-6 py-16 md:py-24 min-h-screen">
+    <div class="w-full max-w-[480px] flex flex-col items-center">
+
+      <!-- Profile Header -->
+      <div class="mb-10 text-center flex flex-col items-center">
+        <div class="relative mb-6 group">
+          <div class="absolute -inset-1 bg-red-500 rounded-full blur opacity-25 group-hover:opacity-60 transition duration-1000"></div>
+          <div class="relative w-28 h-28 rounded-full border-2 border-white/10 p-1 overflow-hidden bg-black">
+            <img src="candelas-photo.jpg" alt="Candelas Artist Profile" class="w-full h-full object-cover rounded-full grayscale hover:grayscale-0 transition-all duration-500">
+          </div>
+        </div>
+        <h1 class="font-display text-4xl uppercase tracking-tighter mb-2">CANDELAS</h1>
+        <p class="text-slate-400 font-bold tracking-[0.2em] uppercase text-[10px]">@iamcandelas</p>
+      </div>
+
+      <!-- Links -->
+      <div class="w-full space-y-4 mb-16">
+        <!-- Latest Single: VHS (highlighted) -->
+        <a href="vhs.html" class="flex items-center gap-4 w-full p-4 rounded-2xl border transition-all duration-300 group bg-primary border-primary hover:bg-white hover:text-black hover:border-white shadow-xl shadow-primary/20">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center bg-black/10">
+            <span class="material-symbols-outlined text-white group-hover:text-black">play_circle</span>
+          </div>
+          <span class="font-bold uppercase tracking-widest text-[11px] flex-grow">Latest Single: VHS</span>
+          <span class="material-symbols-outlined opacity-0 group-hover:opacity-40 transition-opacity text-sm">arrow_forward</span>
+        </a>
+        <!-- Official Website -->
+        <a href="index.html" class="flex items-center gap-4 w-full p-4 rounded-2xl border transition-all duration-300 group bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/30">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center bg-white/5 group-hover:bg-primary/20 transition-colors">
+            <span class="material-symbols-outlined text-primary">language</span>
+          </div>
+          <span class="font-bold uppercase tracking-widest text-[11px] flex-grow">Official Website</span>
+          <span class="material-symbols-outlined opacity-0 group-hover:opacity-40 transition-opacity text-sm">arrow_forward</span>
+        </a>
+        <!-- Tour Dates -->
+        <a href="index.html#live" class="flex items-center gap-4 w-full p-4 rounded-2xl border transition-all duration-300 group bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/30">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center bg-white/5 group-hover:bg-primary/20 transition-colors">
+            <span class="material-symbols-outlined text-primary">calendar_month</span>
+          </div>
+          <span class="font-bold uppercase tracking-widest text-[11px] flex-grow">Tour Dates</span>
+          <span class="material-symbols-outlined opacity-0 group-hover:opacity-40 transition-opacity text-sm">arrow_forward</span>
+        </a>
+        <!-- Spotify -->
+        <a href="https://open.spotify.com/artist/58hnBPQ7LBa6AyJLHRK30o" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 w-full p-4 rounded-2xl border transition-all duration-300 group bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/30">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center bg-white/5 group-hover:bg-primary/20 transition-colors">
+            <span class="material-symbols-outlined text-primary">podcasts</span>
+          </div>
+          <span class="font-bold uppercase tracking-widest text-[11px] flex-grow">Spotify</span>
+          <span class="material-symbols-outlined opacity-0 group-hover:opacity-40 transition-opacity text-sm">arrow_forward</span>
+        </a>
+        <!-- Apple Music -->
+        <a href="https://music.apple.com/us/artist/candelas/1870165233" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 w-full p-4 rounded-2xl border transition-all duration-300 group bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/30">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center bg-white/5 group-hover:bg-primary/20 transition-colors">
+            <span class="material-symbols-outlined text-primary">music_note</span>
+          </div>
+          <span class="font-bold uppercase tracking-widest text-[11px] flex-grow">Apple Music</span>
+          <span class="material-symbols-outlined opacity-0 group-hover:opacity-40 transition-opacity text-sm">arrow_forward</span>
+        </a>
+        <!-- YouTube -->
+        <a href="https://www.youtube.com/@iamcandelas" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 w-full p-4 rounded-2xl border transition-all duration-300 group bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/30">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center bg-white/5 group-hover:bg-primary/20 transition-colors">
+            <span class="material-symbols-outlined text-primary">smart_display</span>
+          </div>
+          <span class="font-bold uppercase tracking-widest text-[11px] flex-grow">YouTube Channel</span>
+          <span class="material-symbols-outlined opacity-0 group-hover:opacity-40 transition-opacity text-sm">arrow_forward</span>
+        </a>
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/iamcandelas/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 w-full p-4 rounded-2xl border transition-all duration-300 group bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/30">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center bg-white/5 group-hover:bg-primary/20 transition-colors">
+            <span class="material-symbols-outlined text-primary">photo_camera</span>
+          </div>
+          <span class="font-bold uppercase tracking-widest text-[11px] flex-grow">Instagram</span>
+          <span class="material-symbols-outlined opacity-0 group-hover:opacity-40 transition-opacity text-sm">arrow_forward</span>
+        </a>
+      </div>
+
+      <!-- Social Icons -->
+      <div class="flex gap-8 mb-12">
+        <a href="https://www.instagram.com/iamcandelas/" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-primary transition-colors">
+          <span class="material-symbols-outlined text-3xl">photo_camera</span>
+        </a>
+        <a href="https://www.youtube.com/@iamcandelas" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-primary transition-colors">
+          <span class="material-symbols-outlined text-3xl">smart_display</span>
+        </a>
+        <a href="https://open.spotify.com/artist/58hnBPQ7LBa6AyJLHRK30o" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-primary transition-colors">
+          <span class="material-symbols-outlined text-3xl">podcasts</span>
+        </a>
+      </div>
+
+      <!-- Logo -->
+      <a href="index.html" class="mb-8 group">
+        <img src="candelas-logo.png" alt="Candelas Logo" class="h-16 w-16 opacity-30 group-hover:opacity-100 group-hover:scale-110 transition-all logo-sharp">
+      </a>
+      <p class="text-[9px] font-bold tracking-[0.4em] uppercase text-slate-700">Candelas Music &bull; <span id="year"></span></p>
+    </div>
+  </div>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="site.js"></script>
+</body>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Candelas | Official Website – Mexican-American Alt Rock Artist</title>
+  <meta name="description" content="Mexican-American alternative rock artist based in Las Vegas, blending rock, indie and Alt Chicano vibes. Visit his official site for music, news and tour updates.">
+  <meta name="keywords" content="Candelas, alt rock, alternative rock, Mexican-American artist, Las Vegas musician, indie rock, rock music">
+  <meta name="author" content="David Candelas">
+  <!-- Local purged Tailwind CSS (29KB vs 143KB CDN) -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Non-blocking Google Fonts load -->
+  <!-- Preconnect to speed up font negotiation -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Load fonts async using media trick - switches to 'all' once loaded -->
+  <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@700;800&display=swap">
+  <!-- Fallback for no-JS: standard blocking load -->
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@700;800&display=swap"></noscript>
+  <!-- Material Symbols - deferred to avoid render blocking -->
+  <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"></noscript>
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://iamcandelas.com/">
+  <meta property="og:title" content="Candelas – Official Website">
+  <meta property="og:description" content="Mexican-American alternative rock artist based in Las Vegas.">
+  <meta property="og:image" content="/candelas-photo.jpg">
+  <meta property="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://iamcandelas.com/">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon-48.png" type="image/png" sizes="48x48">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+</head>
+<body class="bg-background text-white font-sans overflow-x-hidden">
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="fixed top-0 w-full z-[100] transition-all duration-500 bg-transparent py-8">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 group relative z-[102]">
+        <img alt="Candelas Logo" class="h-16 w-16 md:h-20 md:w-20 object-contain logo-sharp group-hover:rotate-12 transition-transform duration-500" src="candelas-logo.png">
+        <span class="font-display text-lg md:text-2xl tracking-tighter uppercase hidden sm:block">iamcandelas</span>
+      </a>
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center gap-10">
+        <button onclick="scrollToSection('music')" class="text-[10px] font-bold tracking-[0.3em] uppercase hover:text-primary transition-colors cursor-pointer">Music</button>
+        <button onclick="scrollToSection('video')" class="text-[10px] font-bold tracking-[0.3em] uppercase hover:text-primary transition-colors cursor-pointer">Video</button>
+        <a href="story.html" class="text-[10px] font-bold tracking-[0.3em] uppercase hover:text-primary transition-colors">Story</a>
+        <button onclick="scrollToSection('live')" class="text-[10px] font-bold tracking-[0.3em] uppercase hover:text-primary transition-colors cursor-pointer">Live</button>
+        <button onclick="scrollToSection('newsletter')" class="bg-primary px-6 py-2 rounded-full text-white text-[10px] font-bold tracking-widest uppercase hover:scale-105 transition-transform">Join</button>
+      </div>
+      <!-- Mobile Toggle -->
+      <button id="menu-toggle" onclick="toggleMenu()" class="md:hidden text-white relative z-[102] p-2 flex items-center" aria-label="Toggle Menu">
+        <span id="menu-icon" class="material-symbols-outlined text-3xl">menu</span>
+      </button>
+    </div>
+    <!-- Mobile Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-black hidden-menu md:hidden z-[101] flex flex-col items-center justify-center">
+      <div class="flex flex-col items-center gap-10">
+        <button onclick="scrollToSection('music'); toggleMenu();" class="text-4xl font-display font-bold tracking-[0.1em] uppercase hover:text-primary transition-all">Music</button>
+        <button onclick="scrollToSection('video'); toggleMenu();" class="text-4xl font-display font-bold tracking-[0.1em] uppercase hover:text-primary transition-all">Video</button>
+        <a href="story.html" class="text-4xl font-display font-bold tracking-[0.1em] uppercase hover:text-primary transition-all" onclick="toggleMenu()">Story</a>
+        <button onclick="scrollToSection('live'); toggleMenu();" class="text-4xl font-display font-bold tracking-[0.1em] uppercase hover:text-primary transition-all">Live</button>
+        <button onclick="scrollToSection('newsletter'); toggleMenu();" class="mt-6 bg-primary px-12 py-5 rounded-full text-white text-sm font-bold tracking-[0.2em] uppercase shadow-2xl shadow-primary/40">Join the Collective</button>
+      </div>
+      <div class="absolute bottom-16 flex gap-10 opacity-60">
+        <a href="https://www.instagram.com/iamcandelas/" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined text-white text-2xl hover:text-primary">photo_camera</span></a>
+        <a href="https://www.youtube.com/@iamcandelas" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined text-white text-2xl hover:text-primary">smart_display</span></a>
+        <a href="https://open.spotify.com/artist/58hnBPQ7LBa6AyJLHRK30o" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined text-white text-2xl hover:text-primary">podcasts</span></a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="relative min-h-[90vh] md:min-h-screen flex items-center overflow-hidden">
+    <div class="absolute inset-0">
+      <img alt="Candelas - Mexican-American Alternative Rock Artist Portrait" class="w-full h-full object-cover object-center scale-105" src="candelas-photo.jpg">
+      <div class="absolute inset-0 bg-black/60"></div>
+      <div class="absolute inset-0 hero-gradient"></div>
+    </div>
+    <div class="relative w-full max-w-7xl mx-auto px-6 z-10 pt-20">
+      <div class="flex flex-col items-center md:items-start text-center md:text-left">
+        <h1 class="font-display fluid-title tracking-tighter text-white uppercase select-none mb-8 md:mb-12 animate-fade-up">
+          CAN<span class="text-primary text-glow">DELAS</span>
+        </h1>
+        <p class="text-lg md:text-3xl text-slate-300 mb-10 md:mb-12 font-light max-w-2xl leading-tight animate-fade-up delay-200">
+          Mexican-American Alt Rock forged in the neon heart of Las Vegas.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 md:gap-6 w-full sm:w-auto animate-fade-up delay-400">
+          <a href="vhs.html" class="bg-primary text-white px-8 md:px-10 py-4 md:py-5 rounded-full font-bold uppercase tracking-widest hover:scale-105 transition-transform flex items-center justify-center gap-3 shadow-lg shadow-primary/20 group">
+            <span class="material-symbols-outlined group-hover:rotate-12 transition-transform">play_arrow</span> Latest Single
+          </a>
+          <button onclick="scrollToSection('live')" class="border border-white/30 text-white px-8 md:px-10 py-4 md:py-5 rounded-full font-bold uppercase tracking-widest hover:bg-white/10 transition-colors cursor-pointer">
+            Tour Dates
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MUSIC / NEW RELEASE -->
+  <section id="music" class="py-20 md:py-32 bg-[#0A0A0A] border-y border-white/5">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center gap-12 md:gap-24">
+        <div class="w-full md:w-5/12 max-w-md md:max-w-none mx-auto">
+          <div class="relative group">
+            <div class="absolute -inset-8 bg-primary/20 blur-[80px] rounded-full opacity-40 group-hover:opacity-70 transition-opacity duration-1000"></div>
+            <div class="aspect-square relative overflow-hidden rounded-2xl shadow-2xl border border-white/10">
+              <img alt="Candelas - VHS Single Official Cover Artwork" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="candelas-vhs.jpg">
+              <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+            </div>
+          </div>
+        </div>
+        <div class="w-full md:w-7/12 text-center md:text-left">
+          <span class="text-primary font-bold tracking-[0.4em] uppercase text-xs mb-4 block">New Release</span>
+          <h2 class="font-display text-6xl md:text-8xl lg:text-9xl mb-4 md:mb-6 leading-none uppercase tracking-tighter">VHS</h2>
+          <p class="text-lg md:text-xl text-slate-300 font-light mb-10 max-w-xl mx-auto md:mx-0">
+            The lead single from the upcoming album <span class="text-white italic">Películas Caseras</span>.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 max-w-2xl mx-auto md:mx-0">
+            <a href="https://open.spotify.com/track/5lIC4pLZzeYC7w8ka1QKON?si=0017d788f7d74085" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-4 bg-white/5 border border-white/10 hover:border-white/40 py-5 px-6 rounded-2xl hover:bg-white/10 transition-all group shadow-sm">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" class="w-5 h-5 opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all" alt="Spotify">
+              <span class="font-bold text-[11px] tracking-widest uppercase text-slate-400 group-hover:text-white">Spotify</span>
+            </a>
+            <a href="https://music.apple.com/us/album/vhs-single/1870193886" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-4 bg-white/5 border border-white/10 hover:border-white/40 py-5 px-6 rounded-2xl hover:bg-white/10 transition-all group shadow-sm">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" class="w-5 h-5 invert opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all" alt="Apple Music">
+              <span class="font-bold text-[11px] tracking-widest uppercase text-slate-400 group-hover:text-white">Apple</span>
+            </a>
+            <a href="https://www.youtube.com/watch?v=RcGzmywxpMI" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-4 bg-white/5 border border-white/10 hover:border-white/40 py-5 px-6 rounded-2xl hover:bg-white/10 transition-all group shadow-sm">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" class="w-5 h-5 opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all" alt="YouTube">
+              <span class="font-bold text-[11px] tracking-widest uppercase text-slate-400 group-hover:text-white">YouTube</span>
+            </a>
+          </div>
+          <div class="mt-10">
+            <a href="vhs.html" class="text-[11px] font-bold tracking-[0.3em] uppercase text-slate-500 hover:text-primary transition-colors inline-flex items-center gap-2">
+              All Platforms <span class="material-symbols-outlined text-sm">open_in_new</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO -->
+  <section id="video" class="py-20 md:py-32 bg-black">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12 md:mb-16">
+        <span class="text-primary font-bold tracking-[0.3em] uppercase mb-4 block text-xs">Music Video</span>
+        <h2 class="font-display text-4xl md:text-6xl uppercase tracking-tighter">Latest Premiere</h2>
+      </div>
+      <div class="max-w-5xl mx-auto">
+        <a href="https://www.youtube.com/watch?v=RcGzmywxpMI" target="_blank" rel="noopener noreferrer" class="block group relative aspect-video rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border border-white/5 bg-[#111]">
+          <img src="https://img.youtube.com/vi/RcGzmywxpMI/maxresdefault.jpg" alt="Candelas - VHS Official Music Video" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="w-16 h-16 md:w-24 md:h-24 bg-primary rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300">
+              <span class="material-symbols-outlined text-white text-3xl md:text-5xl">play_arrow</span>
+            </div>
+          </div>
+          <div class="absolute bottom-0 left-0 p-6 md:p-12 w-full">
+            <h3 class="text-white font-display text-xl md:text-4xl uppercase tracking-tighter">VHS (Official Video)</h3>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY TEASER -->
+  <section id="story" class="py-20 md:py-32 bg-[#0A0A0A] relative overflow-hidden">
+    <div class="max-w-4xl mx-auto px-5 text-center">
+      <span class="text-primary font-bold tracking-[0.3em] uppercase mb-4 block text-xs">The Story</span>
+      <h2 class="font-display text-4xl md:text-7xl mb-8 md:mb-12 uppercase leading-none">A Culture <span class="text-primary italic">Collision</span></h2>
+      <p class="text-lg text-slate-300 mb-10 md:mb-12 leading-relaxed font-light">
+        Candelas is a Mexican-American artist, singer, songwriter, and multi-instrumentalist based in Las Vegas, Nevada. Blending alternative rock, indie, and pop influences, his music captures raw emotion through vivid storytelling and a deep connection to identity and place.
+      </p>
+      <a href="story.html" class="inline-flex items-center gap-3 text-primary font-bold uppercase tracking-widest border-b-2 border-primary pb-2 hover:gap-6 transition-all text-xs">
+        Read the full bio <span class="material-symbols-outlined text-sm">arrow_forward</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- LIVE DATES -->
+  <section id="live" class="py-20 md:py-32 bg-black relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent opacity-50"></div>
+    <div class="max-w-5xl mx-auto px-6 relative z-10">
+      <div class="text-center mb-16">
+        <span class="text-primary font-bold tracking-[0.3em] uppercase mb-4 block text-xs">Live On Stage</span>
+        <h2 class="font-display text-4xl md:text-7xl uppercase">Tour Dates</h2>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-3xl p-12 md:p-20 text-center backdrop-blur-sm shadow-2xl">
+        <h3 class="font-display text-3xl md:text-6xl uppercase tracking-tighter mb-4">Don't Miss <br><span class="text-primary italic">The Next Set</span></h3>
+        <p class="text-slate-400 max-w-xl mx-auto mb-10 text-base md:text-lg font-light leading-relaxed">
+          I'm currently booking the 2026 schedule. Join the collective to be the first to know about local dates.
+        </p>
+        <button onclick="scrollToSection('newsletter')" class="inline-flex items-center gap-3 bg-white text-black px-10 py-4 rounded-full font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all text-xs">
+          Notify Me <span class="material-symbols-outlined text-sm">notifications</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL SPOTLIGHT -->
+  <section class="py-24 md:py-40 bg-black relative overflow-hidden border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6 relative">
+      <div class="flex flex-col lg:flex-row items-center gap-16 md:gap-20">
+        <div class="lg:w-5/12 text-center lg:text-left">
+          <span class="text-primary font-bold tracking-[0.4em] uppercase mb-6 block text-xs">Social Spotlight</span>
+          <h2 class="font-display text-4xl md:text-8xl uppercase mb-8 leading-[0.9] tracking-tighter">Live from <br><span class="text-primary">the Grid</span></h2>
+          <p class="text-slate-400 text-base md:text-lg mb-10 max-w-md mx-auto lg:mx-0 leading-relaxed font-light">Direct access to the creative process. Studio updates and tour diaries.</p>
+          <a href="https://www.instagram.com/iamcandelas/" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center lg:items-start">
+            <span class="text-2xl md:text-3xl font-display font-bold text-white group-hover:text-primary transition-colors duration-300">@iamcandelas</span>
+            <span class="text-[9px] font-bold tracking-[0.3em] uppercase text-slate-500 group-hover:text-primary transition-colors">Follow on Instagram</span>
+          </a>
+        </div>
+        <div class="lg:w-7/12 w-full">
+          <!-- Instagram Embed -->
+          <div class="relative w-full max-w-[540px] mx-auto group">
+            <div class="absolute -inset-1 bg-gradient-to-r from-primary/50 to-purple-600/50 rounded-[20px] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+            <div class="relative bg-zinc-900 border border-white/10 rounded-[18px] overflow-hidden shadow-2xl">
+              <blockquote class="instagram-media w-full" data-instgrm-permalink="https://www.instagram.com/iamcandelas/?utm_source=ig_embed&utm_campaign=loading" data-instgrm-version="14" style="background:#000; border:0; margin:0; padding:0; width:100%; min-width:326px;">
+                <div class="p-8 min-h-[400px] flex flex-col items-center justify-center text-center space-y-6" id="ig-placeholder">
+                  <div class="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center animate-pulse">
+                    <span class="material-symbols-outlined text-3xl text-primary/50">photo_camera</span>
+                  </div>
+                  <a href="https://www.instagram.com/iamcandelas/" target="_blank" rel="noopener noreferrer" class="text-xs font-bold tracking-widest uppercase text-primary">@iamcandelas on Instagram</a>
+                </div>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section id="newsletter" class="py-20 md:py-32 bg-primary">
+    <div class="max-w-4xl mx-auto px-6 text-center text-white">
+      <h2 class="font-display text-4xl md:text-7xl mb-6 uppercase tracking-tighter">Join the Collective</h2>
+      <div id="newsletter-form-wrap">
+        <p class="text-base md:text-lg mb-10 md:mb-12 opacity-90 max-w-lg mx-auto font-medium tracking-tight">Get the stuff I don't always post publicly: unreleased demos, behind-the-scenes moments, early show announcements, and exclusive merch drops.</p>
+        <div class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+          <input id="newsletter-email" class="flex-grow bg-white/20 border border-white/30 focus:ring-2 focus:ring-white placeholder:text-white/60 py-4 px-8 rounded-full text-white backdrop-blur-sm outline-none" placeholder="Your email address" type="email">
+          <button onclick="subscribeNewsletter()" class="bg-white text-primary font-bold uppercase py-4 px-10 rounded-full hover:bg-black hover:text-white transition-all shadow-xl text-sm min-w-[160px]">Subscribe</button>
+        </div>
+        <p id="newsletter-error" class="mt-3 text-[11px] font-bold uppercase tracking-widest text-black hidden"></p>
+        <p class="mt-6 text-[10px] opacity-70 uppercase tracking-widest font-medium">By subscribing, you agree to receive email updates. You can unsubscribe at any time.</p>
+      </div>
+      <div id="newsletter-success" class="hidden py-12">
+        <h3 class="text-3xl md:text-5xl font-display uppercase tracking-tighter mb-4">You're in.</h3>
+        <p class="text-base md:text-lg opacity-90 max-w-md mx-auto font-medium tracking-tight">Thanks for joining the journey. Check your inbox for a welcome message!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-20 border-t border-white/5 bg-black">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col items-center">
+      <img alt="Candelas Logo" class="h-24 w-24 object-contain mb-8 opacity-80 logo-sharp" src="candelas-logo.png">
+      <div class="flex flex-wrap justify-center gap-12 mb-12 text-sm font-bold tracking-widest uppercase text-slate-500">
+        <a href="https://open.spotify.com/artist/58hnBPQ7LBa6AyJLHRK30o" class="hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">Spotify</a>
+        <a href="https://music.apple.com/us/artist/candelas/1870165233" class="hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">Apple Music</a>
+        <a href="https://www.youtube.com/@iamcandelas" class="hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="https://www.instagram.com/iamcandelas/" class="hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </div>
+      <div class="text-center">
+        <p class="text-slate-600 text-sm mb-4">© <span id="year"></span> CANDELAS MUSIC. ALL RIGHTS RESERVED.</p>
+        <div class="flex gap-6 justify-center text-xs text-slate-700 uppercase font-bold tracking-widest">
+          <a href="newsletter.html" class="hover:text-slate-300">Newsletter</a>
+          <a href="privacy.html" class="hover:text-slate-300">Privacy Policy</a>
+          <a href="terms.html" class="hover:text-slate-300">Terms of Use</a>
+          <a href="contact.html" class="hover:text-slate-300">Contact Candelas</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script async src="https://www.instagram.com/embed.js" onload="if(window.instgrm){window.instgrm.Embeds.process();document.getElementById('ig-placeholder').style.display='none';}"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        nav.classList.remove('bg-transparent', 'py-8');
+        nav.classList.add('bg-black', 'py-4', 'border-b', 'border-white/10', 'shadow-xl');
+      } else {
+        nav.classList.add('bg-transparent', 'py-8');
+        nav.classList.remove('bg-black', 'py-4', 'border-b', 'border-white/10', 'shadow-xl');
+      }
+    });
+
+    // Mobile menu toggle
+    let menuOpen = false;
+    function toggleMenu() {
+      menuOpen = !menuOpen;
+      const menu = document.getElementById('mobile-menu');
+      const icon = document.getElementById('menu-icon');
+      if (menuOpen) {
+        menu.classList.remove('hidden-menu');
+        menu.classList.add('visible-menu');
+        icon.textContent = 'close';
+      } else {
+        menu.classList.remove('visible-menu');
+        menu.classList.add('hidden-menu');
+        icon.textContent = 'menu';
+      }
+    }
+
+    // Smooth scroll
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+      if (menuOpen) toggleMenu();
+    }
+
+    // Newsletter — calls /api/subscribe serverless proxy (see netlify/edge-functions/subscribe.js)
+    async function subscribeNewsletter() {
+      const emailEl = document.getElementById('newsletter-email');
+      const errEl   = document.getElementById('newsletter-error');
+      const btn     = document.querySelector('#newsletter-form-wrap button');
+      const email   = emailEl.value.trim();
+
+      errEl.classList.add('hidden');
+
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        errEl.textContent = 'Please enter a valid email address.';
+        errEl.classList.remove('hidden');
+        return;
+      }
+
+      // Loading state
+      btn.disabled = true;
+      btn.innerHTML = '<span class="w-4 h-4 border-2 border-primary/30 border-t-primary rounded-full animate-spin inline-block"></span> Joining...';
+
+      try {
+        const res  = await fetch('/api/subscribe', {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body:    JSON.stringify({ email }),
+        });
+        const data = await res.json();
+
+        if (res.ok && data.success) {
+          document.getElementById('newsletter-form-wrap').classList.add('hidden');
+          document.getElementById('newsletter-success').classList.remove('hidden');
+        } else {
+          errEl.textContent = data.message || 'Something went wrong. Please try again.';
+          errEl.classList.remove('hidden');
+          btn.disabled = false;
+          btn.innerHTML = 'Subscribe';
+        }
+      } catch {
+        errEl.textContent = 'Network error. Please check your connection and try again.';
+        errEl.classList.remove('hidden');
+        btn.disabled = false;
+        btn.innerHTML = 'Subscribe';
+      }
+    }
+  </script>
+  <script src="site.js"></script>
+</body>
+</html>
