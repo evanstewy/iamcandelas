@@ -54,22 +54,22 @@
         <span id="menu-icon" class="material-symbols-outlined text-3xl">menu</span>
       </button>
     </div>
-    <!-- Mobile Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 bg-black hidden-menu md:hidden z-[101] flex flex-col items-center justify-center">
-      <div class="flex flex-col items-center gap-10">
-        <button onclick="scrollToSection('music'); toggleMenu();" class="text-4xl font-display font-bold tracking-[0.1em] uppercase hover:text-primary transition-all">Music</button>
-        <button onclick="scrollToSection('video'); toggleMenu();" class="text-4xl font-display font-bold tracking-[0.1em] uppercase hover:text-primary transition-all">Video</button>
-        <a href="story.html" class="text-4xl font-display font-bold tracking-[0.1em] uppercase hover:text-primary transition-all" onclick="toggleMenu()">Story</a>
-        <button onclick="scrollToSection('live'); toggleMenu();" class="text-4xl font-display font-bold tracking-[0.1em] uppercase hover:text-primary transition-all">Live</button>
-        <button onclick="scrollToSection('newsletter'); toggleMenu();" class="mt-6 bg-primary px-12 py-5 rounded-full text-white text-sm font-bold tracking-[0.2em] uppercase shadow-2xl shadow-primary/40">Join the Collective</button>
+      <!-- Mobile Overlay -->
+      <div id="mobile-menu" class="fixed inset-0 bg-black hidden-menu md:hidden z-[101] flex flex-col items-center justify-center">
+        <div class="flex flex-col items-center gap-10">
+          <button onclick="scrollToSection('music')" class="text-4xl font-display font-bold tracking-[0.1em] uppercase hover:text-primary transition-all">Music</button>
+          <button onclick="scrollToSection('video')" class="text-4xl font-display font-bold tracking-[0.1em] uppercase hover:text-primary transition-all">Video</button>
+          <a href="story.html" class="text-4xl font-display font-bold tracking-[0.1em] uppercase hover:text-primary transition-all" onclick="toggleMenu()">Story</a>
+          <button onclick="scrollToSection('live')" class="text-4xl font-display font-bold tracking-[0.1em] uppercase hover:text-primary transition-all">Live</button>
+          <button onclick="scrollToSection('newsletter')" class="mt-6 bg-primary px-12 py-5 rounded-full text-white text-sm font-bold tracking-[0.2em] uppercase shadow-2xl shadow-primary/40">Join the Collective</button>
+        </div>
+        <div class="absolute bottom-16 flex gap-10 opacity-60">
+          <a href="https://www.instagram.com/iamcandelas/" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined text-white text-2xl hover:text-primary">photo_camera</span></a>
+          <a href="https://www.youtube.com/@iamcandelas" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined text-white text-2xl hover:text-primary">smart_display</span></a>
+          <a href="https://open.spotify.com/artist/58hnBPQ7LBa6AyJLHRK30o" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined text-white text-2xl hover:text-primary">podcasts</span></a>
+        </div>
       </div>
-      <div class="absolute bottom-16 flex gap-10 opacity-60">
-        <a href="https://www.instagram.com/iamcandelas/" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined text-white text-2xl hover:text-primary">photo_camera</span></a>
-        <a href="https://www.youtube.com/@iamcandelas" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined text-white text-2xl hover:text-primary">smart_display</span></a>
-        <a href="https://open.spotify.com/artist/58hnBPQ7LBa6AyJLHRK30o" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined text-white text-2xl hover:text-primary">podcasts</span></a>
-      </div>
-    </div>
-  </nav>
+    </nav>
 
   <!-- HERO -->
   <header class="relative min-h-[90vh] md:min-h-screen flex items-center overflow-hidden">
