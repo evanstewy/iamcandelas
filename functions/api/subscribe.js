@@ -53,7 +53,7 @@ export async function onRequestPost(context) {
   }
 
   // Step 2: Add to "New Subscribers" group
-  await fetch('https://api.sender.net/v2/subscribers/groups/bYYJjO', {
+  const groupRes = await fetch('https://api.sender.net/v2/subscribers/groups/bYYJjO', {
     method: 'POST',
     headers: {
       'Authorization': `Bearer ${token}`,
@@ -63,7 +63,10 @@ export async function onRequestPost(context) {
     body: JSON.stringify({ subscribers: [email] }),
   });
 
-  return new Response(JSON.stringify({ success: true }), {
-    status: 200, headers: CORS_HEADERS,
+  const groupData = await groupRes.json();
+
+  // Return full group response so we can see what Sender.net says
+  return new Response(JSON.stringify(groupData), {
+    status: groupRes.status, headers: CORS_HEADERS,
   });
 }
