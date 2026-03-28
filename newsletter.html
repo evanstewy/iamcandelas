@@ -52,49 +52,44 @@
         <a href="index.html" class="text-primary font-bold uppercase tracking-widest text-xs border-b border-primary pb-1 hover:text-white hover:border-white transition-all">Back to Home</a>
       </div>
 
-      <!-- Form -->
+<!-- Form -->
       <div id="form-state">
         <p class="text-slate-400 text-lg mb-10 font-light leading-relaxed">
           Get the stuff I don't always post publicly: unreleased demos, behind-the-scenes moments, early show announcements, and exclusive merch drops.
         </p>
-        <div class="space-y-4">
+        <form onsubmit="nlSubscribe(event)" class="space-y-4">
           <div class="relative">
-            <input id="nl-email" class="w-full bg-white/5 border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary py-5 px-8 rounded-2xl text-white outline-none transition-all placeholder:text-slate-600" placeholder="Enter your email address" type="email">
+            <input id="nl-email" class="w-full bg-white/5 border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary py-5 px-8 rounded-2xl text-white outline-none transition-all placeholder:text-slate-600" placeholder="Enter your email address" type="email" required>
             <p id="nl-error" class="hidden absolute -bottom-6 left-4 text-[10px] font-bold uppercase tracking-widest text-primary"></p>
           </div>
-          <button onclick="nlSubscribe()" id="nl-btn" class="w-full bg-primary text-white font-bold uppercase py-5 px-10 rounded-2xl hover:bg-red-600 transition-all shadow-xl shadow-primary/20 text-sm tracking-[0.2em] flex items-center justify-center gap-3">
+          <button type="submit" id="nl-btn" class="w-full bg-primary text-white font-bold uppercase py-5 px-10 rounded-2xl hover:bg-red-600 transition-all shadow-xl shadow-primary/20 text-sm tracking-[0.2em] flex items-center justify-center gap-3">
             Subscribe <span class="material-symbols-outlined text-sm">arrow_forward</span>
           </button>
-        </div>
+        </form>
         <p class="mt-8 text-[10px] text-slate-600 uppercase tracking-widest font-medium">At most one email per week. Unsubscribe anytime.</p>
       </div>
     </div>
-
     <div class="mt-12 flex justify-center gap-8">
       <a href="https://www.instagram.com/iamcandelas/" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-white transition-colors uppercase text-[10px] font-bold tracking-widest">Instagram</a>
       <a href="https://open.spotify.com/artist/58hnBPQ7LBa6AyJLHRK30o" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-white transition-colors uppercase text-[10px] font-bold tracking-widest">Spotify</a>
       <a href="https://www.youtube.com/@iamcandelas" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-white transition-colors uppercase text-[10px] font-bold tracking-widest">YouTube</a>
     </div>
   </div>
-
   <script>
-    async function nlSubscribe() {
+    async function nlSubscribe(event) {
+      event.preventDefault();
       const emailEl = document.getElementById('nl-email');
       const errEl   = document.getElementById('nl-error');
       const btn     = document.getElementById('nl-btn');
       const email   = emailEl.value.trim();
-
       errEl.classList.add('hidden');
-
       if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
         errEl.textContent = 'Please enter a valid email address.';
         errEl.classList.remove('hidden');
         return;
       }
-
       btn.disabled = true;
       btn.innerHTML = '<div class="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div><span>Joining...</span>';
-
       try {
         const res  = await fetch('/api/subscribe', {
           method:  'POST',
@@ -102,7 +97,6 @@
           body:    JSON.stringify({ email }),
         });
         const data = await res.json();
-
         if (res.ok && data.success) {
           document.getElementById('form-state').classList.add('hidden');
           document.getElementById('success-state').classList.remove('hidden');
