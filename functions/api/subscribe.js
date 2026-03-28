@@ -45,7 +45,9 @@ export async function onRequestPost(context) {
   });
 
   const data = await res.json();
-  return res.ok
-    ? new Response(JSON.stringify({ success: true }), { status: 200, headers: CORS_HEADERS })
-    : new Response(JSON.stringify({ message: data.message || 'Subscription failed.' }), { status: 400, headers: CORS_HEADERS });
+
+  // Return the full Sender.net response so we can see what's going wrong
+  return new Response(JSON.stringify(data), {
+    status: res.status, headers: CORS_HEADERS
+  });
 }
