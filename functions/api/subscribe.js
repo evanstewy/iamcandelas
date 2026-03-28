@@ -34,7 +34,26 @@ export async function onRequestPost(context) {
     });
   }
 
-  const res = await fetch('https://api.sender.net/v2/subscribers/groups/bYYJjO', {
+  // Step 1: Create the subscriber
+  const subscriberRes = await fetch('https://api.sender.net/v2/subscribers', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    },
+    body: JSON.stringify({ email }),
+  });
+
+  if (!subscriberRes.ok) {
+    const data = await subscriberRes.json();
+    return new Response(JSON.stringify({ message: data.message || 'Subscription failed.' }), {
+      status: 400, headers: CORS_HEADERS,
+    });
+  }
+
+  // Step 2: Add to "New Subscribers" group
+  await fetch('https://api.sender.net/v2/subscribers/groups/bYYJjO', {
     method: 'POST',
     headers: {
       'Authorization': `Bearer ${token}`,
@@ -44,10 +63,7 @@ export async function onRequestPost(context) {
     body: JSON.stringify({ subscribers: [email] }),
   });
 
-  const data = await res.json();
-
-  // Return the full Sender.net response so we can see what's going wrong
-  return new Response(JSON.stringify(data), {
-    status: res.status, headers: CORS_HEADERS
+  return new Response(JSON.stringify({ success: true }), {
+    status: 200, headers: CORS_HEADERS,
   });
 }
