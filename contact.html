@@ -140,17 +140,44 @@
       else { menu.classList.remove('visible-menu'); menu.classList.add('hidden-menu'); icon.textContent = 'menu'; }
     }
 
-    function submitContact(e) {
-      e.preventDefault();
-      const btn = document.getElementById('submit-btn');
-      btn.disabled = true;
-      btn.innerHTML = '<div class="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>';
-      // Simulate submission (no backend available in static build)
-      setTimeout(() => {
-        document.getElementById('contact-form').classList.add('hidden');
-        document.getElementById('form-success').classList.remove('hidden');
-      }, 1000);
+async function submitContact(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submit-btn');
+  const errDiv = document.getElementById('form-error');
+  const errMsg = document.getElementById('form-error-msg');
+
+  errDiv.classList.add('hidden');
+  btn.disabled = true;
+  btn.innerHTML = '<div class="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>';
+
+  try {
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name:    document.getElementById('name').value.trim(),
+        email:   document.getElementById('email').value.trim(),
+        message: document.getElementById('message').value.trim(),
+      }),
+    });
+    const data = await res.json();
+
+    if (res.ok && data.success) {
+      document.getElementById('contact-form').classList.add('hidden');
+      document.getElementById('form-success').classList.remove('hidden');
+    } else {
+      errMsg.textContent = data.message || 'Something went wrong. Please try again.';
+      errDiv.classList.remove('hidden');
+      btn.disabled = false;
+      btn.innerHTML = '<span>Send Message</span><span class="material-symbols-outlined text-sm">send</span>';
     }
+  } catch {
+    errMsg.textContent = 'Network error. Please check your connection and try again.';
+    errDiv.classList.remove('hidden');
+    btn.disabled = false;
+    btn.innerHTML = '<span>Send Message</span><span class="material-symbols-outlined text-sm">send</span>';
+  }
+}
 
     function resetContactForm() {
       document.getElementById('contact-form').reset();
