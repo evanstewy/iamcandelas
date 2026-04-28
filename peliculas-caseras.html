@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Películas Caseras – New Album | Candelas</title>
+  <meta name="description" content="Stream Películas Caseras, the debut album by Candelas, on Spotify, Apple Music, YouTube Music, Deezer, Tidal, and Pandora.">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+  <!-- Local purged Tailwind CSS (29KB vs 143KB CDN) -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Non-blocking Google Fonts load -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@700;800&display=swap">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@700;800&display=swap"></noscript>
+  <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"></noscript>
+</head>
+<body class="bg-[#0A0A0A] text-white font-sans overflow-x-hidden min-h-screen">
+
+  <!-- Fixed background -->
+  <div class="fixed inset-0 pointer-events-none z-0">
+    <div class="absolute inset-0 bg-[url('candelas-peliculas-caseras.jpg')] bg-cover bg-center opacity-10 blur-2xl scale-110"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/95 to-black"></div>
+  </div>
+
+  <div class="relative z-10 flex flex-col items-center px-6 py-12 md:py-24 min-h-screen">
+    <div class="w-full max-w-lg mx-auto flex flex-col items-center">
+
+      <!-- Header -->
+      <header class="text-center mb-10 w-full">
+        <h2 class="text-primary font-bold tracking-[0.4em] uppercase text-xs mb-4">New Album</h2>
+        <h1 class="font-display text-4xl md:text-6xl uppercase tracking-tighter mb-4">Películas<br>Caseras</h1>
+        <p class="text-slate-400 font-medium tracking-widest text-sm uppercase opacity-80 mb-2">CANDELAS</p>
+        <p class="text-slate-500 italic text-sm">Out Now on all platforms</p>
+      </header>
+
+      <!-- Video Preview -->
+      <div class="w-full mb-8">
+        <a href="https://www.youtube.com/watch?v=RcGzmywxpMI" target="_blank" rel="noopener noreferrer"
+           class="group block relative aspect-video w-full rounded-2xl overflow-hidden shadow-xl border border-white/5 bg-zinc-900">
+          <img src="https://img.youtube.com/vi/RcGzmywxpMI/maxresdefault.jpg" alt="Candelas - VHS Official Music Video"
+               class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-white text-3xl">play_arrow</span>
+            </div>
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+            <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-white/90">Watch Candelas – VHS Official Video</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Streaming Links -->
+      <div class="w-full space-y-3 mb-16">
+        <!-- Spotify -->
+        <a href="https://open.spotify.com/album/5CQ2E2FqrJfIjqAXkkI4pO?si=dPsGOUlyRHaLIVj9nJ_k_g" target="_blank" rel="noopener noreferrer"
+           class="flex items-center justify-between p-3 md:p-4 bg-zinc-900/40 hover:bg-zinc-800/60 border border-white/5 rounded-xl transition-all group backdrop-blur-md">
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 flex items-center justify-center rounded-full overflow-hidden">
+              <img src="https://cdn.brandfetch.io/spotify.com/w/400/h/400/theme/dark/fallback/lettermark/type/icon?c=1idaRmlEiX_wrtZwlNq" alt="Spotify" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+            </div>
+            <span class="font-bold text-sm tracking-wide uppercase text-slate-300 group-hover:text-white">Spotify</span>
+          </div>
+          <div class="bg-white/5 px-6 py-2 rounded-lg text-[10px] font-bold tracking-[0.2em] uppercase text-white/40 group-hover:bg-primary group-hover:text-white transition-all">Listen</div>
+        </a>
+        <!-- Apple Music -->
+        <a href="https://music.apple.com/us/album/pel%C3%ADculas-caseras/1887503688" target="_blank" rel="noopener noreferrer"
+           class="flex items-center justify-between p-3 md:p-4 bg-zinc-900/40 hover:bg-zinc-800/60 border border-white/5 rounded-xl transition-all group backdrop-blur-md">
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 flex items-center justify-center rounded-full overflow-hidden">
+              <img src="https://cdn.brandfetch.io/apple.com/w/400/h/400/theme/dark/fallback/lettermark/type/icon?c=1idaRmlEiX_wrtZwlNq" alt="Apple Music" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+            </div>
+            <span class="font-bold text-sm tracking-wide uppercase text-slate-300 group-hover:text-white">Apple Music</span>
+          </div>
+          <div class="bg-white/5 px-6 py-2 rounded-lg text-[10px] font-bold tracking-[0.2em] uppercase text-white/40 group-hover:bg-primary group-hover:text-white transition-all">Play</div>
+        </a>
+        <!-- YouTube Music -->
+        <a href="https://music.youtube.com/playlist?list=OLAK5uy_kcfl9DWW8lyHxB6ZWpj74COZ-B_rdCMOo&si=akNNkAdpEoTPso_h" target="_blank" rel="noopener noreferrer"
+           class="flex items-center justify-between p-3 md:p-4 bg-zinc-900/40 hover:bg-zinc-800/60 border border-white/5 rounded-xl transition-all group backdrop-blur-md">
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 flex items-center justify-center rounded-full overflow-hidden">
+              <img src="https://cdn.brandfetch.io/youtube.com/w/400/h/400/theme/dark/fallback/lettermark/type/icon?c=1idaRmlEiX_wrtZwlNq" alt="YouTube Music" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+            </div>
+            <span class="font-bold text-sm tracking-wide uppercase text-slate-300 group-hover:text-white">YouTube Music</span>
+          </div>
+          <div class="bg-white/5 px-6 py-2 rounded-lg text-[10px] font-bold tracking-[0.2em] uppercase text-white/40 group-hover:bg-primary group-hover:text-white transition-all">Play</div>
+        </a>
+        <!-- Deezer -->
+        <a href="https://link.deezer.com/s/32ZIPx1EnjouskC5PU720" target="_blank" rel="noopener noreferrer"
+           class="flex items-center justify-between p-3 md:p-4 bg-zinc-900/40 hover:bg-zinc-800/60 border border-white/5 rounded-xl transition-all group backdrop-blur-md">
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 flex items-center justify-center rounded-full overflow-hidden">
+              <img src="https://cdn.brandfetch.io/deezer.com/w/400/h/400/theme/dark/fallback/lettermark/type/icon?c=1idaRmlEiX_wrtZwlNq" alt="Deezer" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+            </div>
+            <span class="font-bold text-sm tracking-wide uppercase text-slate-300 group-hover:text-white">Deezer</span>
+          </div>
+          <div class="bg-white/5 px-6 py-2 rounded-lg text-[10px] font-bold tracking-[0.2em] uppercase text-white/40 group-hover:bg-primary group-hover:text-white transition-all">Play</div>
+        </a>
+        <!-- Tidal -->
+        <a href="https://tidal.com/album/509619253/u" target="_blank" rel="noopener noreferrer"
+           class="flex items-center justify-between p-3 md:p-4 bg-zinc-900/40 hover:bg-zinc-800/60 border border-white/5 rounded-xl transition-all group backdrop-blur-md">
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 flex items-center justify-center rounded-full overflow-hidden">
+              <img src="https://cdn.brandfetch.io/tidal.com/w/400/h/400/theme/dark/fallback/lettermark/type/icon?c=1idaRmlEiX_wrtZwlNq" alt="Tidal" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+            </div>
+            <span class="font-bold text-sm tracking-wide uppercase text-slate-300 group-hover:text-white">Tidal</span>
+          </div>
+          <div class="bg-white/5 px-6 py-2 rounded-lg text-[10px] font-bold tracking-[0.2em] uppercase text-white/40 group-hover:bg-primary group-hover:text-white transition-all">Play</div>
+        </a>
+        <!-- Pandora -->
+        <a href="https://pandora.app.link/9KOIiffkl2b" target="_blank" rel="noopener noreferrer"
+           class="flex items-center justify-between p-3 md:p-4 bg-zinc-900/40 hover:bg-zinc-800/60 border border-white/5 rounded-xl transition-all group backdrop-blur-md">
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 flex items-center justify-center rounded-full overflow-hidden">
+              <img src="https://cdn.brandfetch.io/pandora.com/w/400/h/400/theme/dark/fallback/lettermark/type/icon?c=1idaRmlEiX_wrtZwlNq" alt="Pandora" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+            </div>
+            <span class="font-bold text-sm tracking-wide uppercase text-slate-300 group-hover:text-white">Pandora</span>
+          </div>
+          <div class="bg-white/5 px-6 py-2 rounded-lg text-[10px] font-bold tracking-[0.2em] uppercase text-white/40 group-hover:bg-primary group-hover:text-white transition-all">Play</div>
+        </a>
+      </div>
+
+      <!-- Footer Branding -->
+      <footer class="text-center mt-auto">
+        <a href="index.html" class="inline-block hover:scale-110 transition-transform duration-500 mb-6 group">
+          <img src="candelas-logo.png" alt="Candelas Logo" class="h-16 w-16 mx-auto opacity-50 group-hover:opacity-100 logo-sharp">
+        </a>
+        <div class="flex gap-4 justify-center mb-6">
+          <a href="https://www.instagram.com/iamcandelas/" class="text-slate-600 hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
+            <span class="material-symbols-outlined text-2xl">photo_camera</span>
+          </a>
+          <a href="https://www.youtube.com/@iamcandelas" class="text-slate-600 hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
+            <span class="material-symbols-outlined text-2xl">smart_display</span>
+          </a>
+        </div>
+        <p class="text-slate-600 text-[10px] tracking-[0.3em] uppercase mb-12">© <span id="year"></span> Candelas Music</p>
+      </footer>
+    </div>
+  </div>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="site.js"></script>
+</body>
+</html>
